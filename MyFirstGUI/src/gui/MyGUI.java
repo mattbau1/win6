@@ -121,7 +121,7 @@ public class MyGUI {
 			}
 
 		});
-		btnHallo.setBounds(81, 159, 241, 25);
+		btnHallo.setBounds(25, 159, 241, 25);
 		btnHallo.setText("Hallo");
 
 		lblNachname = new Label(shell, SWT.NONE);

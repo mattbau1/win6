@@ -24,7 +24,11 @@ public class JSONTest {
 		
 		try{
 		
-		Writer writer=new FileWriter("C:\\temp\\output.json");
+		
+			
+			
+			Writer writer=new FileWriter("C:\\temp\\output.json");
+		
 		Gson gson=new GsonBuilder().serializeNulls().create();
 		//
 //		gson.toJson("Hallo",writer);
@@ -35,18 +39,25 @@ public class JSONTest {
 		p.setVorname("MAX");
 		p.setNachname("mUSTERMANN");
 		//
-		
-		
+        ArrayList<Person> personen= new ArrayList<>();
+		personen.add(p);
+		personen.add(p);
+		personen.add(p);
 		gson.toJson(p,writer);
 		
 		writer.flush();
 		writer.close();		
 		
+		
+		
+		
+		
 		Reader r= new FileReader("C:\\temp\\output.json");
 		ArrayList<Person> personenread = new ArrayList<>() ;
 		java.lang.reflect.Type listType= new TypeToken <ArrayList<Person>>() {}.getType();
 		personenread =gson.fromJson(r, listType);
-		for(Person p2: )
+		for(Person p2: personenread )
+			System.out.println(p2);
 		
 		
 		
